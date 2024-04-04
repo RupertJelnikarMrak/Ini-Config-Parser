@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.25.1)
-project(IniConfigParser VERSION 0.1.0 LANGUAGES C CXX)
+project(IniConfigManager VERSION 0.1.0 LANGUAGES C CXX)
 
 set(CMAKE_CXX_STANDARD 23)
 
@@ -16,8 +16,8 @@ foreach(SRC_FILE IN LISTS SRC)
     endforeach()
     message(STATUS "")
     
-add_executable(${PROJECT_NAME} ${SRC})
+add_library(${PROJECT_NAME} SHARED ${SRC})
 
-target_include_directories(IniConfigParser PUBLIC
+target_include_directories(${PROJECT_NAME} PUBLIC
 ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
