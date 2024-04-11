@@ -9,7 +9,7 @@ int ConfigManager::addEntry(ConfigEntryBase *entry)
 {
     if (_entries.find(entry->getName()) != _entries.end())
         _entries[entry->getName()] = entry;
-};
+}
 
 void ConfigManager::load()
 {
