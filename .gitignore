@@ -3,6 +3,9 @@
 build/*
 bin/*
 
+test.cpp
+test.ini
+
 # * CMake
 CMakeLists.txt.user
 CMakeCache.txt
