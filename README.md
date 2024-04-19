@@ -10,13 +10,13 @@ You can install it using cmake or include it like a static or shared library.
 ```
 
 ### 2. Creating the manager
-Each IniConfManager object represents a file. To create a manager call it's constructor along with the path/name of the file you wish to wrte to. For example:
+Each IniConfManager object represents a file. To create a manager call it's constructor along with the path/name of the file you wish to write to. For example:
 ```c++
 IniConfManager manager("/path_to_file/options.ini");
 ```
 
 ### 3. Defining the entries
-The configuration manager uses classes derived from `IniConfEntry::Base`. Classes for Integer, Long, Float, Double, Boolean and String have been premade.
+The configuration manager uses classes derived from `IniConfEntry::Base`. Classes for Integer, Long, Float, Double, Boolean and String have been pre-made.
 You can define your entry objects anywhere you like like so:
 ```c++
 namespace options
@@ -42,10 +42,10 @@ manager.addEntry(&stringEntry);
 ```
 
 ### 5. Build the file
-Calling `manager.build()` will load the configuration file if it exesists or create it if it doesn't. Alternetavly calling `manager.save()` will overwrite the file with the current values of the entries and `manager.load()` will read the values from the file and load them to the entries.
+Calling `manager.build()` will load the configuration file if it exists or create it if it doesn't. Alternatively calling `manager.save()` will overwrite the file with the current values of the entries and `manager.load()` will read the values from the file and load them to the entries.
 
 ### 6. Defining custom entries
-To define a custim entry create a class which inherits from `IniConfEntry::Base<T>` T bein your entry type.
+To define a custom entry create a class which inherits from `IniConfEntry::Base<T>` T being your entry type.
 You will need to overload 2 methods and the constructor like so:
 ```c++
 class CustomType
