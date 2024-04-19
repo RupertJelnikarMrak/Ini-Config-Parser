@@ -24,7 +24,13 @@ namespace IniConfEntry
 
         void writeToFile(std::ofstream &file) const;
 
+        /**
+         * @brief Override this function to return however you want the value to be written to the file as a string. Note! Multiline values are not supported. For possible errors returns check the defined enum ErrorCode.
+         */
         virtual std::string getValueAsString() const = 0;
+        /**
+         * @brief Override this function with how you wish to interpret the value from a string. This will be called with the trimmed string of the value read from the file. For possible errors check the defined enum ErrorCode.
+         */
         virtual int setValueFromString(std::string const &value_as_string) = 0;
 
         friend class ::IniConfManager;
